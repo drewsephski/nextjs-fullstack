@@ -5,6 +5,10 @@ import { prisma } from "~/lib/server/db";
 import { stripe } from "~/lib/server/payment";
 
 export async function POST(req: NextRequest) {
+  if (!stripe) {
+    return new Response("Stripe not configured", { status: 500 });
+  }
+
   //@ts-expect-error Argument of type 'ReadableStream<any>' is not assignable to parameter of type 'ReadableStream | Readable | AsyncIterable<any>'
   const body = await buffer(req.body);
   const headers = req.headers;

@@ -9,7 +9,7 @@
     "build:content": "velite build --clean",
     "build": "pnpm build:content && prisma generate && prisma db push && next build",
     "start": "next start",
-    "lint": "next lint --dir src",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,css}'",
     "preinstall": "lefthook install",
     "release": "release-it"

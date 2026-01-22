@@ -7,6 +7,10 @@ import { getCurrentSession } from "~/lib/server/auth/session";
 import { getUserSubscriptionPlan, stripe } from "~/lib/server/payment";
 
 export async function GET(req: NextRequest) {
+  if (!stripe) {
+    return new Response("Stripe not configured", { status: 500 });
+  }
+
   const locale = req.cookies.get("Next-Locale")?.value || "en";
 
   const billingUrl = siteConfig(locale).url + "/dashboard/billing/";

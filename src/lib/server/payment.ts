@@ -3,10 +3,12 @@ import { freePlan, proPlan } from "~/config/subscription";
 import { prisma } from "~/lib/server/db";
 import { type UserSubscriptionPlan } from "~/types";
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2025-03-31.basil",
-  typescript: true,
-});
+export const stripe = process.env.STRIPE_SECRET_KEY
+  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2025-03-31.basil",
+      typescript: true,
+    })
+  : null;
 
 export async function getUserSubscriptionPlan(
   userId: string
