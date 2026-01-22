@@ -10,7 +10,7 @@ import {
 } from "@react-email/components";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_URL ?? "https://chadnext.moinulmoin.com";
+  process.env.NEXT_PUBLIC_URL ?? "https://next-starter-v2.vercel.app";
 
 interface VerificationTemplateProps {
   userName: string;
@@ -42,7 +42,7 @@ const VerificationTemp: React.FC<Readonly<VerificationTemplateProps>> = ({
           <Text className="mt-8 text-base">
             Best,
             <br />
-            <span className="font-bold">ChadNext</span>
+            <span className="font-bold">Next Starter v2</span>
           </Text>
         </Container>
       </Body>

@@ -1,19 +1,11 @@
-import { StarIcon } from "lucide-react";
 import Link from "next/link";
 import { BrandIcons } from "~/components/shared/brand-icons";
 import Icons from "~/components/shared/icons";
 import { buttonVariants } from "~/components/ui/button";
-import { nFormatter } from "~/lib/utils";
 import { getScopedI18n } from "~/locales/server";
 
 export default async function Hero() {
   const scopedT = await getScopedI18n("hero");
-  const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/moinulmoin/chadnext",
-    {
-      next: { revalidate: 3600 },
-    }
-  ).then((res) => res.json());
 
   return (
     <section>
@@ -28,7 +20,7 @@ export default async function Hero() {
           >
             <Icons.twitter className="h-5 w-5 text-blue-700" />
             <p className="text-sm font-semibold text-blue-700">
-              {scopedT("top")} ChadNext
+              {scopedT("top")} Next Starter v2
             </p>
           </a>
           <h1 className="text-balance bg-gradient-to-br from-gray-900 via-gray-800 to-gray-400 bg-clip-text text-center font-heading text-[40px] font-bold leading-tight tracking-[-0.02em] text-transparent drop-shadow-sm duration-300 ease-linear [word-spacing:theme(spacing.1)] dark:bg-gradient-to-br dark:from-gray-100 dark:to-gray-900 md:text-7xl md:leading-[5rem]">
@@ -37,20 +29,9 @@ export default async function Hero() {
           <p className="mt-6 text-balance text-center text-muted-foreground md:text-xl">
             {scopedT("sub")}
           </p>
-          <div className="mx-auto mt-6 flex items-center justify-center space-x-5">
+          <div className="mx-auto mt-6 flex items-center justify-center">
             <Link className={buttonVariants() + " gap-x-2"} href="/login">
               {scopedT("firstButton")}
-            </Link>
-            <Link
-              className={buttonVariants({ variant: "outline" }) + " gap-x-2"}
-              href="https://github.com/moinulmoin/chadnext"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="font-medium">{nFormatter(stars)}</span>
-              <StarIcon width={16} />
-              <span>{scopedT("on")}</span>
-              <Icons.gitHub width={16} />
             </Link>
           </div>
         </div>

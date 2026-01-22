@@ -1,14 +1,13 @@
 export const siteUrl =
-  process.env.NEXT_PUBLIC_APP_URL || "https://chadnext.moinulmoin.com";
+  process.env.NEXT_PUBLIC_APP_URL || "https://next-starter-v2.vercel.app";
 
 export const siteConfig = (locale: string = "en") => ({
-  name: "ChadNext",
+  name: "Next Starter v2",
   url: siteUrl + "/" + locale,
   ogImage: `${siteUrl}/${locale}/opengraph-image`,
-  description: "Quick Starter Template for your Next project.",
+  description: "Comprehensive Starter Template for your Next.js project.",
   links: {
     twitter: "https://twitter.com/immoinulmoin",
-    github: "https://github.com/moinulmoin/chadnext",
   },
 });
 

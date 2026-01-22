@@ -1,13 +1,13 @@
 {
-  "name": "chadnext",
-  "version": "1.7.0",
+  "name": "next-starter-v2",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "prisma generate && next dev --turbo",
     "dev:email": "email dev -p 9000",
     "dev:content": "velite build --watch",
     "build:content": "velite build --clean",
-    "build": "pnpm build:content && prisma generate && prisma db push && next build",
+    "build": "pnpm build:content && prisma generate && next build",
     "start": "next start",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,css}'",

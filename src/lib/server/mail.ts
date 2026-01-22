@@ -11,11 +11,11 @@ export const sendWelcomeEmail = async ({
   toMail,
   userName,
 }: SendWelcomeEmailProps) => {
-  const subject = "Thanks for using ChadNext!";
+  const subject = "Thanks for using Next Starter v2!";
   const temp = ThanksTemp({ userName }) as ReactNode;
 
   await resend.emails.send({
-    from: `ChadNext App <chadnext@moinulmoin.com>`,
+    from: `Next Starter v2 App <noreply@resend.app>`,
     to: toMail,
     subject: subject,
     headers: {
@@ -27,11 +27,11 @@ export const sendWelcomeEmail = async ({
 };
 
 export const sendOTP = async ({ toMail, code, userName }: SendOTPProps) => {
-  const subject = "OTP for ChadNext";
+  const subject = "OTP for Next Starter v2";
   const temp = VerificationTemp({ userName, code }) as ReactNode;
 
   await resend.emails.send({
-    from: `ChadNext App <chadnext@moinulmoin.com>`,
+    from: `Next Starter v2 App <noreply@next-starter-v2.app>`,
     to: toMail,
     subject: subject,
     headers: {

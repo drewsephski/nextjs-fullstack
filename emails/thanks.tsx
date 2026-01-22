@@ -1,6 +1,5 @@
 import {
   Body,
-  Button,
   Container,
   Head,
   Html,
@@ -17,28 +16,23 @@ interface ThanksTemplateProps {
 const ThanksTemp: React.FC<Readonly<ThanksTemplateProps>> = ({ userName }) => (
   <Html>
     <Head />
-    <Preview>Welcome to ChadNext.</Preview>
+    <Preview>Welcome to Next Starter v2.</Preview>
     <Tailwind>
       <Body className="bg-gray-100">
         <Container className="mx-auto my-10 bg-white">
           <Section className="m-6">
             <Text className="mx-10 text-lg font-bold">Hi {userName} 👋 ,</Text>
             <Text className="mx-10 text-base">
-              Welcome to ChadNext. Now you can build your idea faster. You can
-              star the project on GitHub. That would be very helpful.
+              Welcome to Next Starter v2. Now you can build your idea faster.
+              For support and updates, please contact the author.
             </Text>
             <Section className="my-5 text-center">
-              <Button
-                className="inline-block px-6 py-3 text-base text-white rounded-md bg-bg-white bg-slate-900"
-                href="https://github.com/moinulmoin/chadnext"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Star on GitHub
-              </Button>
+              <Text className="text-sm text-gray-600">
+                Premium Template - Contact for Support
+              </Text>
             </Section>
             <Text className="mx-10 text-base font-light">Best,</Text>
-            <Text className="mx-10 text-base font-bold">ChadNext</Text>
+            <Text className="mx-10 text-base font-bold">Next Starter v2</Text>
           </Section>
         </Container>
       </Body>
